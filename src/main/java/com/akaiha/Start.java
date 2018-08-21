@@ -50,27 +50,6 @@ public class Start extends JavaPlugin {
 	}
 
 	private void restartTask() {
-		switch(intervalNumber){
-			case 1: // 30 minutes
-				restartInterval = 36000L;
-				break;
-			case 2: // 15 minutes
-				restartInterval = 18000L;
-				break;
-			case 3: // 10 minutes
-				restartInterval = 12000L;
-				break;
-			case 4: // 5 minutes
-				restartInterval = 6000L;
-				break;
-			case 5: // 1 minute
-				restartInterval = 1200L;
-				break;
-			case 6: // 30 seconds
-				restartInterval = 600L;
-				break;
-			default:
-		}
 		getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
 			@Override
 			public void run() {
@@ -81,6 +60,27 @@ public class Start extends JavaPlugin {
 					getServer().dispatchCommand(getServer().getConsoleSender(),"stop");
 				}
 				intervalNumber++;
+				switch(intervalNumber){
+					case 1: // 30 minutes
+						restartInterval = 36000L;
+						break;
+					case 2: // 15 minutes
+						restartInterval = 18000L;
+						break;
+					case 3: // 10 minutes
+						restartInterval = 12000L;
+						break;
+					case 4: // 5 minutes
+						restartInterval = 6000L;
+						break;
+					case 5: // 1 minute
+						restartInterval = 1200L;
+						break;
+					case 6: // 30 seconds
+						restartInterval = 600L;
+						break;
+					default:
+				}
 				restartTask();
 			}
 		}, restartInterval);
