@@ -1,0 +1,26 @@
+#Don't edit the Version.
+Version: 1
+
+#Enable/disable messages when server saves
+Message-Enabled-Save: true
+#Save interval measured in ticks
+Save-Interval: 36000
+#Save Message
+Save-Message: "Saving..."
+
+#Enable/disable messages when server saves
+Message-Enabled-Restart: true
+#Restart times based on local server time 0000 - 2400, you can set as many times as needed
+Restart-Interval:
+  - 0000
+  - 0800
+  - 1600
+#Restart Message must have 7 messages
+Restart-Message:
+  - "Server Restarting in 30 minutes"
+  - "Server Restarting in 15 minutes"
+  - "Server Restarting in 10 minutes"
+  - "Server Restarting in 5 minutes"
+  - "Server Restarting in 1 minute"
+  - "Server Restarting in 30 seconds"
+  - "Server Restarting..."
